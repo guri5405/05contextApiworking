@@ -1,0 +1,18 @@
+import React from 'react'
+import UserContext from './UserContext.js'
+import { useState } from 'react';
+
+
+//  created the Provider for the store
+const UserContextProvider = ({children}) =>{
+
+  const [ user, setUser] = useState(null);
+  return (
+    <UserContext.Provider value ={{user, setUser}}>
+      {children}
+      
+    </UserContext.Provider>
+  )
+}
+
+export default UserContextProvider;
